@@ -7,7 +7,7 @@ import (
 
 func main() {
 	//to get the current time
-	presentTime := time.Now()
+	presentTime := time.Now()//can have even more methods further time.Now().Nanosecond()
 	fmt.Println(presentTime) //2025-08-10 20:10:57.8700003 +0530 IST m=+0.000547601 this is output
 
 	fmt.Println(presentTime.Format("01-02-2006"))        //here 01-02-2006 will always be the same otherwise it will not run

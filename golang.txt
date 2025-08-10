@@ -8,3 +8,8 @@ Go has a lot of things missing ( like try and catch and switch statements) but i
 Go is a general-purpose language designed with systems programming in mind. It is strongly typed and garbage-collected and has explicit support for concurrent programming. Programs are constructed from packages, whose properties allow efficient management of dependencies.
 
 # go mod init something similar to npm init
+
+
+to build for different operating systems we use command GOOS
+GOOS="windows" go build and this is going to build for windows
+use linux for linux OS and then darwin for macOS
