@@ -2,8 +2,9 @@ It truly utilizes the power of cloud infra. That's why very popular. Golang is a
 We can build system apps to web apps using GO. Syntax similar with C, java and Pascal
 Lil bit of OOPs in it but not really.
 
-Documentation says to use semicolon but even if dont use no error because of the lexer that does a lot of work.
+Documentation says to use semicolon but even if dont use no error because of the lexer that does a lot of work. (lexer just checks for the syntax of the codes). If no semicolon then before the program runs the lexer comes in and put them and fixes the issues and runs(except the logical issues)
 Go has a lot of things missing ( like try and catch and switch statements) but it simply does not need them.
 
+Go is a general-purpose language designed with systems programming in mind. It is strongly typed and garbage-collected and has explicit support for concurrent programming. Programs are constructed from packages, whose properties allow efficient management of dependencies.
 
 # go mod init something similar to npm init
