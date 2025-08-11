@@ -12,4 +12,8 @@ fmt.Println("Length of the array is: ", len(fruitList))//does not matter if ther
 var vegList = [3]string{"potato", "tomato", "apple"}//here even we make it 5 and give 3 values and then print the length then the length is gonna be 5
 fmt.Println("The vegList is: ", vegList)
 fmt.Println("The length of the vegList is: ", len(vegList))
+
+//number array
+var numList = [3]int{1,2, 3}
+fmt.Println("the numList is: ", numList)
 }
