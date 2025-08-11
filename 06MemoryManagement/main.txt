@@ -1,0 +1,17 @@
+Memeory management in Golang happens automatically. Memory allocations and deallocations are done automatically.
+
+
+There are two methods for memory allocation:
+
+new()
+- allocate memory but no initialisation
+- you will get a memory address
+- zeroed storage ( cannot put any data initially)
+
+make()
+- allocate memory with initialisation
+- you will get a memory address
+- non zeroed storage
+
+Garbage collection happens automatically. Condition: - (out of scope or nil)
+So there is a threshold value that we can set when that hits garbage collection happens
