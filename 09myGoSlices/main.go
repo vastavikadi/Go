@@ -31,4 +31,12 @@ func main() {
 	sort.Ints(highScore)//directly sorts the slice and append tht to the slice 
 	fmt.Println(highScore)//printing the slice now and got it in ascending order because sort did it and stored in the highScore
 	fmt.Println(sort.IntsAreSorted((highScore)))//returns true because it is already sorted
+
+
+	//how to remove a value from slices based on index
+	var techStacks = []string{"React", "Express", "Fastify", "Nest", "Next"}
+	fmt.Println("Our techStacks: ",techStacks)
+	var index int = 2//lets say we are going to remove fastify from the list
+	techStacks = append(techStacks[:index], techStacks[index+1:]...)//using spread operator like in js to spread all the elements
+	fmt.Println("This is the new techStacks after removing index 2: ",techStacks)
 }
