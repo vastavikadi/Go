@@ -1,0 +1,1 @@
+This is the file content we will be writing in a file using GO.
