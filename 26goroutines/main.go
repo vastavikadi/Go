@@ -3,13 +3,15 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"sync"
+	"sync"//it is a package that provides synchronization primitives such as WaitGroup and Mutex
 )
 
-var signals = []string{"test"}
+var signals = []string{"test"}//this is a slice of strings to hold the signals
 
 var wg sync.WaitGroup //usually these are pointers
-var mut sync.Mutex    // pointer
+var mut sync.Mutex    // pointer and mutex for synchronizing access to shared resources
+//mutex stands for mutual exclusion and it is used to prevent race conditions it is used to lock the memory to prevent concurrent access. What happens if we don't use it? all go routines will try to access the shared resource at the same time and it can lead to inconsistent or corrupted data, so we use mutex to avoid that. It locks the memory until one goroutine is done with it. and then unlocks it for the next (called lock and unlock mutex)
+//Read and write mutex stops the writing for other until one is reading and vice versa(another type of mutex)
 
 func main() {
 	// go greeter("Hello")//these are two different functions which were going to print hello and world 5 times one after another but what if we wnated to print hello once and then world once and so on. The way is to go with the goroutines and to use go routines we use keyword go and thats what i did. But this way it is going to print the world 5 times and no hello because we never told that go routine when to come back and print hello. now for that we used time.Sleep but that is not the ideal way
@@ -25,11 +27,11 @@ func main() {
 	}
 
 	for _, web := range websitelist {
-		go getStatusCode(web)//without the go routines it will hitting lco then go then google and so on but with the concurrency it will hit all of them at the same time 
-		wg.Add(1)
+		go getStatusCode(web)//without the go routines it will hitting lco then go then google and so on but with the concurrency it will hit all of them at the same time
+		wg.Add(1)///this increments the WaitGroup counter, keeps adding them to the concurrency list
 	}
 
-	wg.Wait()
+	wg.Wait()//this tells the main entry point (func main) to wait for all goroutines to finish
 	fmt.Println(signals)
 }
 
@@ -41,7 +43,7 @@ func main() {
 // }
 
 func getStatusCode(endpoint string) {
-	defer wg.Done()
+	defer wg.Done()//this decrements the WaitGroup counter when the goroutine completes
 
 	res, err := http.Get(endpoint)
 
