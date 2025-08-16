@@ -171,7 +171,6 @@ func deleteOneCourse(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func getUsersBooks(w http.ResponseWriter, r *http.Request) {}
 
 // GET / — home HTML
 // GET /courses — list all courses

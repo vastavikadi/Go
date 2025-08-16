@@ -13,3 +13,16 @@ Go is a general-purpose language designed with systems programming in mind. It i
 to build for different operating systems we use command GOOS
 GOOS="windows" go build and this is going to build for windows
 use linux for linux OS and then darwin for macOS
+
+
+
+concurrency means you are able to run multiple tasks simultaneously, making efficient use of system resources but not necessarily at the same time. In Go, concurrency is achieved through goroutines and channels, allowing developers to write programs that can perform multiple operations concurrently without the complexity of traditional threading models. mtlb can be engaged into multiple tasks but not at the exact same time, phle ek spoon khana khaya then phone check kia then again ek spoon khaya this is concurrencybut if i were eating and checking the phone at the exact same time then it would be parallelism.
+
+concurrency is a design pattern that allows you to write programs that can perform multiple tasks at the same time, but not necessarily in parallel. In Go, concurrency is achieved through goroutines and channels, which allow you to write code that can handle multiple tasks without blocking the main thread of execution.
+
+
+goroutines are the way for concurrency in Go. They are lightweight threads managed by the Go runtime, allowing you to run functions concurrently without the overhead of traditional threads. You can create a goroutine by using the `go` keyword followed by a function call. This enables you to perform tasks asynchronously, making it easier to write concurrent programs.
+
+Threads are often compared to goroutines, but there are key differences. Goroutines are more lightweight and easier to manage than traditional threads, making them a popular choice for concurrent programming in Go. Threads are managed by the OS kernel, while goroutines are managed by the Go runtime, allowing for more efficient scheduling and resource utilization. Goroutines give us more control over concurrency, enabling developers to create highly concurrent applications with ease. This is the reason go is so popular for building web servers and other applications that require high concurrency and cloud.
+
+DO not communicate by sharing memory; instead, share memory by communicating. This is a fundamental principle in Go's concurrency model, emphasizing the use of channels for safe communication between goroutines rather than relying on shared memory. This approach helps avoid common concurrency issues like race conditions and deadlocks.
